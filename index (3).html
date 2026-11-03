@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Les Lamane - Thiès | Cuisine Sénégalaise & Fast Food</title>
+
+  <!-- Tailwind CSS CDN (Gratuit) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Polices Google Fonts (Gratuit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icônes (Gratuit) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#091629] text-slate-100 font-sans selection:bg-[#D4AF37] selection:text-black">
+
+  <!-- BARRE D'INFOS SUPÉRIEURE -->
+  <div class="bg-black/60 border-b border-amber-500/20 text-xs py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-3">
+        <span><i class="fa-solid fa-location-dot text-[#D4AF37] mr-1"></i> Quartier Mbour 3 au 3ème dos d'âne, Thiès</span>
+        <span class="hidden md:inline text-amber-500/40">•</span>
+        <span class="hidden md:inline"><i class="fa-regular fa-clock text-[#D4AF37] mr-1"></i> Ouvert 7j/7</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span class="bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-wider">
+          <i class="fa-solid fa-check-circle mr-1"></i>100% Halal
+        </span>
+        <a href="tel:775500972" class="hover:text-[#D4AF37] transition"><i class="fa-solid fa-phone text-[#D4AF37] mr-1"></i> 77 550 09 72</a>
+        <a href="tel:776304275" class="hover:text-[#D4AF37] transition"><i class="fa-solid fa-phone text-[#D4AF37] mr-1"></i> 77 630 42 75</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-[#091629]/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full border-2 border-[#D4AF37] flex items-center justify-center bg-[#D4AF37]/10">
+          <i class="fa-solid fa-utensils text-[#D4AF37]"></i>
+        </div>
+        <div>
+          <span class="block font-serif text-lg md:text-xl font-bold tracking-wider text-white">LES LAMANE</span>
+          <span class="block text-[10px] tracking-widest text-[#D4AF37] uppercase">Traditionnel & Fast Food</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="#accueil" class="hover:text-[#D4AF37] transition">Accueil</a>
+        <a href="#menu-du-jour" class="hover:text-[#D4AF37] transition">Menu du Jour</a>
+        <a href="#menu" class="hover:text-[#D4AF37] transition">La Carte</a>
+        <a href="#localisation" class="hover:text-[#D4AF37] transition">Plan & Contact</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <button onclick="toggleCart()" aria-label="Voir le panier" class="relative p-2.5 rounded-full bg-white/5 border border-white/10 hover:border-[#D4AF37] text-white hover:text-[#D4AF37] transition">
+          <i class="fa-solid fa-basket-shopping text-lg"></i>
+          <span id="cart-badge" class="absolute -top-1 -right-1 bg-[#E63946] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#091629]">0</span>
+        </button>
+        <a href="https://wa.me/221775500972" target="_blank" class="hidden sm:inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-full font-semibold text-xs tracking-wide transition shadow-lg shadow-emerald-900/30">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Commander WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BANNIÈRE PRINCIPALE -->
+  <section id="accueil" class="relative py-16 lg:py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#D4AF37] text-xs font-semibold uppercase tracking-wider">
+          <i class="fa-solid fa-utensils text-xs"></i>
+          <span>Une cuisine authentique pour tous les goûts</span>
+        </div>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-serif font-extrabold text-white leading-tight">
+          L'alliance des saveurs du <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-amber-200">Sénégal</span> et du street food.
+        </h1>
+        <p class="text-slate-300 text-base">
+          Thiéboudienne, yassa, mafé, domoda… un nouveau menu sénégalais chaque jour, plus nos burgers, tacos, chawarmas et fatayas faits maison. Plats à partir de <strong class="text-[#D4AF37]"><span id="min-price">1 500</span> FCFA</strong>.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#menu-du-jour" class="bg-[#D4AF37] hover:bg-[#B89628] text-black font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-amber-500/20 inline-flex items-center space-x-2">
+            <span>Voir le Menu du Jour</span>
+            <i class="fa-solid fa-arrow-down text-sm"></i>
+          </a>
+          <a href="https://wa.me/221775500972?text=Bonjour,%20je%20souhaite%20passer%20une%20commande%20en%20livraison" target="_blank" class="bg-emerald-600/30 hover:bg-emerald-600 text-white font-medium px-6 py-3 rounded-xl border border-emerald-500/40 transition inline-flex items-center space-x-2">
+            <i class="fa-solid fa-motorcycle text-emerald-400"></i>
+            <span>Livraison Rapide Thiès</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Galerie Visuelle -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-4">
+          <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Poisson Braisé" class="w-full h-48 object-cover">
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Burger Gourmand" class="w-full h-36 object-cover">
+          </div>
+        </div>
+        <div class="space-y-4 pt-6">
+          <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=600&q=80" alt="Chawarma & Tacos" class="w-full h-36 object-cover">
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=600&q=80" alt="Poulet Pané" class="w-full h-48 object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU DU JOUR (mis à jour depuis Google Sheets) -->
+  <section id="menu-du-jour" class="py-14 bg-gradient-to-b from-[#11223F] to-[#091629] border-y border-[#D4AF37]/20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#E63946]/15 border border-[#E63946]/40 text-[#ff8a93] text-xs font-semibold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-fire-burner text-xs"></i>
+          <span>Cuisiné aujourd'hui</span>
+        </div>
+        <h2 class="text-3xl font-serif font-bold text-white mb-2">Le Menu du Jour</h2>
+        <p id="today-date" class="text-[#D4AF37] text-sm font-semibold capitalize"></p>
+        <p class="text-slate-400 text-sm mt-1">Nos plats sénégalais préparés ce jour, dans la limite des quantités disponibles.</p>
+      </div>
+      <div id="daily-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="col-span-full text-center text-slate-400 text-sm py-8"><i class="fa-solid fa-spinner fa-spin mr-2"></i>Chargement du menu…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALEURS -->
+  <section id="valeurs" class="py-10 bg-[#11223F]/70 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+        <i class="fa-solid fa-plate-wheat text-[#D4AF37] text-2xl mb-2"></i>
+        <h3 class="font-bold text-white text-sm">Plats du Jour</h3>
+        <p class="text-xs text-slate-400">Variété quotidienne</p>
+      </div>
+      <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+        <i class="fa-solid fa-leaf text-[#D4AF37] text-2xl mb-2"></i>
+        <h3 class="font-bold text-white text-sm">Produits Frais</h3>
+        <p class="text-xs text-slate-400">Arrivages réguliers</p>
+      </div>
+      <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+        <i class="fa-solid fa-fire text-[#D4AF37] text-2xl mb-2"></i>
+        <h3 class="font-bold text-white text-sm">Cuisine Authentique</h3>
+        <p class="text-xs text-slate-400">Tradition & Modernité</p>
+      </div>
+      <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+        <i class="fa-solid fa-users text-[#D4AF37] text-2xl mb-2"></i>
+        <h3 class="font-bold text-white text-sm">Cadre Agréable</h3>
+        <p class="text-xs text-slate-400">Accueil chaleureux</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LA CARTE COMPLÈTE AVEC FILTRES -->
+  <section id="menu" class="py-16 max-w-7xl mx-auto px-4">
+    <div class="text-center max-w-xl mx-auto mb-10">
+      <h2 class="text-3xl font-serif font-bold text-white mb-2">La Carte du Restaurant</h2>
+      <p class="text-slate-400 text-sm">Tout ce qui est disponible aujourd'hui. Composez votre plateau et commandez par WhatsApp en un clic.</p>
+      <div id="menu-tabs" class="flex flex-wrap justify-center gap-2 mt-6"></div>
+    </div>
+    <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- LOCALISATION & GOOGLE MAPS -->
+  <section id="localisation" class="py-16 bg-[#11223F]/50 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-3xl font-serif font-bold text-white mb-2">Localisation & Accès</h2>
+          <p class="text-slate-400 text-sm">Rendez-vous sur place au restaurant ou passez commande pour être livré directement chez vous à Thiès.</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] shrink-0 mt-1"><i class="fa-solid fa-map-pin"></i></div>
+            <div>
+              <div class="text-sm font-bold text-white">Adresse exacte</div>
+              <div class="text-xs text-slate-300">Quartier Mbour 3 au 3ème dos d'âne, Thiès, Sénégal</div>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] shrink-0 mt-1"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="text-sm font-bold text-white">Téléphones direct</div>
+              <div class="text-xs text-slate-300">
+                <a href="tel:775500972" class="hover:text-amber-400 font-bold">77 550 09 72</a> &bull;
+                <a href="tel:776304275" class="hover:text-amber-400 font-bold">77 630 42 75</a>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] shrink-0 mt-1"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <div class="text-sm font-bold text-white">Horaires d'ouverture</div>
+              <div class="text-xs text-slate-300">Ouvert 7j/7 - Service continu midi et soir</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=14.7688125,-16.9516875" target="_blank" class="bg-[#D4AF37] hover:bg-[#B89628] text-black font-bold px-5 py-2.5 rounded-xl text-xs transition inline-flex items-center space-x-2">
+            <i class="fa-solid fa-diamond-turn-right"></i>
+            <span>Itinéraire Google Maps</span>
+          </a>
+          <a href="tel:775500972" class="bg-white/10 hover:bg-white/20 text-white font-medium px-5 py-2.5 rounded-xl text-xs border border-white/15 transition inline-flex items-center space-x-2">
+            <i class="fa-solid fa-phone"></i>
+            <span>Appeler le gérant</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte centrée sur la position exacte du restaurant -->
+      <div class="rounded-2xl overflow-hidden border border-white/10 h-80 shadow-2xl bg-black">
+        <iframe title="Google Maps Les Lamane Thiès"
+          src="https://maps.google.com/maps?q=14.7688125,-16.9516875&z=17&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANIER LATÉRAL (DRAWER) -->
+  <div id="cart-drawer" class="fixed inset-y-0 right-0 w-full max-w-sm bg-[#11223F] border-l border-white/10 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-4 border-b border-white/10 flex items-center justify-between">
+      <h3 class="font-serif font-bold text-white flex items-center text-sm">
+        <i class="fa-solid fa-basket-shopping text-[#D4AF37] mr-2"></i> Votre Commande
+      </h3>
+      <button onclick="toggleCart()" aria-label="Fermer le panier" class="text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+    </div>
+    <div id="cart-items" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+    <div class="p-4 border-t border-white/10 bg-[#091629]/60 space-y-3">
+      <div>
+        <label for="cust-name" class="block text-[11px] font-bold text-slate-300 mb-1">Votre Nom / Téléphone</label>
+        <input type="text" id="cust-name" placeholder="Ex: Pape Ndiaye (77 ...)" class="w-full bg-white/5 border border-white/15 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#D4AF37]">
+      </div>
+      <div>
+        <label for="cust-dest" class="block text-[11px] font-bold text-slate-300 mb-1">Adresse à Thiès (Livraison ou Sur place)</label>
+        <input type="text" id="cust-dest" placeholder="Ex: Mbour 3, à côté de l'école" class="w-full bg-white/5 border border-white/15 rounded-lg px-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-[#D4AF37]">
+      </div>
+      <div class="flex justify-between items-center pt-2 border-t border-white/10 text-sm">
+        <span class="font-medium text-slate-300">Total :</span>
+        <span id="cart-total" class="font-bold text-[#D4AF37] text-base">0 FCFA</span>
+      </div>
+      <button onclick="sendOrderToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl transition text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-900/40">
+        <i class="fa-brands fa-whatsapp text-sm"></i>
+        <span>Envoyer sur WhatsApp (77 550 09 72)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- BAS DE PAGE -->
+  <footer class="bg-black py-6 border-t border-white/10 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="font-serif font-bold text-slate-300">RESTAURANT LES LAMANE &bull; THIÈS</div>
+      <div>Quartier Mbour 3 au 3ème dos d'âne</div>
+      <div class="text-[#D4AF37]">Saveur &bull; Qualité &bull; Hygiène &bull; Bon accueil</div>
+    </div>
+  </footer>
+
+  <!--
+    MENU DE SECOURS : utilisé tant que le lien Google Sheets n'est pas renseigné
+    (ou si Google Sheets ne répond pas). Même format que le tableau.
+  -->
+  <script type="text/plain" id="default-menu">
+Catégorie,Plat,Prix (FCFA),Description,Disponible (OUI/NON),"Photo (lien, optionnel)"
+Cuisine sénégalaise,Thiéboudienne (Riz au poisson rouge),3000,"Le plat national : riz cuit dans la sauce tomate, poisson farci au roff, légumes (manioc, chou, carotte, aubergine, diakhatou).",OUI,
+Cuisine sénégalaise,Thiébou Dienn Blanc,3000,"Version sans tomate du riz au poisson, servie avec ses légumes et sa sauce.",NON,
+Cuisine sénégalaise,Thiébou Yapp (Riz à la viande),3000,"Riz parfumé cuit dans le jus de viande de bœuf ou d'agneau, oignons et petits pois.",NON,
+Cuisine sénégalaise,Thiébou Guinar (Riz au poulet),2500,Riz rouge mijoté avec du poulet et des légumes.,NON,
+Cuisine sénégalaise,Thiébou Kéthiakh,2000,"Riz au poisson séché (kéthiakh), plat populaire au goût intense.",NON,
+Cuisine sénégalaise,Yassa Poulet,2500,"Poulet mariné au citron et à la moutarde, confit d'oignons, servi avec riz blanc.",OUI,
+Cuisine sénégalaise,Yassa Poisson,2500,"Poisson grillé nappé de sauce oignons-citron, servi avec riz blanc.",NON,
+Cuisine sénégalaise,Yassa Viande,3000,"Viande de bœuf ou d'agneau en sauce yassa, servie avec riz blanc.",NON,
+Cuisine sénégalaise,Mafé,2500,"Ragoût de viande à la sauce d'arachide, légumes, servi avec riz blanc.",OUI,
+Cuisine sénégalaise,Domoda,2500,"Sauce épaisse à la tomate et à la farine de riz, viande ou poisson, servie avec riz.",NON,
+Cuisine sénégalaise,Soupou Kandja,2500,"Sauce gombo à l'huile de palme, poisson, fruits de mer et viande, servie avec riz.",NON,
+Cuisine sénégalaise,Thiou Poulet (Curry),2500,"Poulet mijoté en sauce tomate épicée, pommes de terre et carottes, avec riz.",NON,
+Cuisine sénégalaise,Thiou Poisson,2500,"Poisson en sauce tomate relevée, légumes, servi avec riz.",NON,
+Cuisine sénégalaise,Kaldou,2500,"Bouillon de poisson au citron et aux oignons, léger et parfumé, avec riz blanc.",NON,
+Cuisine sénégalaise,Caldou de Poisson Braisé,3000,Poisson braisé servi avec une sauce citronnée et du riz blanc.,NON,
+Cuisine sénégalaise,Mbakhal,2000,"Riz aux arachides, poisson séché et niébé, spécialité du Saloum.",NON,
+Cuisine sénégalaise,Bassi Salté,3000,"Couscous de mil avec sauce viande, légumes et niébé (sur commande).",NON,
+Cuisine sénégalaise,Thiéré Mboum,2500,Couscous de mil accompagné de sauce aux feuilles et viande.,NON,
+Cuisine sénégalaise,Dibi Agneau,3500,"Viande d'agneau grillée au feu de bois, oignons et moutarde.",NON,
+Cuisine sénégalaise,Poisson Braisé & Riz Wolof,3000,"Poisson mariné aux aromates locaux, oignons caramélisés et riz parfumé.",OUI,https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=500&q=80
+Cuisine sénégalaise,Poulet Braisé Épicé,2500,"Cuisse de poulet marinée façon locale, grillée au feu et servie avec riz.",OUI,https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=500&q=80
+Cuisine sénégalaise,Viande Sautée,2500,"Bœuf fondant aux poivrons et oignons, accompagnement au choix.",NON,https://images.unsplash.com/photo-1547928576-a4a33237cbc3?auto=format&fit=crop&w=500&q=80
+Cuisine sénégalaise,Ndambé,1000,"Haricots niébé mijotés à la tomate, servis en sandwich ou au bol.",NON,
+Cuisine sénégalaise,Lakhou Bissap,1500,"Couscous de mil à la sauce bissap, poisson et niébé.",NON,
+Fast food,Burger Complet,2000,"Steak haché généreux, cheddar fondu, salade, tomate et sauce spéciale.",OUI,https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80
+Fast food,Tacos Complet,2500,"Tortilla garnie de viandes marinées, frites et sauce fromagère.",OUI,https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=500&q=80
+Fast food,Chawarma Grillé,1800,"Émincé de viande rôtie, crudités et sauce ail sous pain libanais.",OUI,https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=500&q=80
+Fast food,Poulet Pané Doré,2000,Aiguillettes de poulet panées croustillantes avec frites.,OUI,https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=500&q=80
+Snacks & Fatayas,Fataya Viande (Portion),1500,Beignets triangulaires croustillants farcis à la viande hachée épicée.,OUI,https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=500&q=80
+Snacks & Fatayas,Fataya Poisson (Portion),1500,Beignets croustillants farcis au poisson épicé.,OUI,
+Snacks & Fatayas,Pastels (Portion),1500,"Petits chaussons frits au poisson, sauce tomate pimentée.",OUI,
+Snacks & Fatayas,Samosa Viande,1500,"Feuilletés triangulaires au bœuf épicé, sauce pimentée.",OUI,https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80
+Snacks & Fatayas,Accara (Portion),1000,"Beignets de niébé dorés, servis avec sauce tomate-oignon pimentée.",OUI,
+Desserts,Thiakry,1000,"Couscous de mil sucré au lait caillé, vanille et muscade.",OUI,
+Desserts,Lakh,1000,Bouillie de mil servie avec lait caillé sucré.,NON,
+Desserts,Sombi,1000,Riz au lait à la noix de coco.,NON,
+Desserts,Fondé,1000,Boulettes de mil au lait caillé sucré.,NON,
+Boissons,Jus de Bissap,800,"Boisson maison à l'hibiscus, fraîche et sucrée.",OUI,https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80
+Boissons,Jus de Bouye,800,Jus onctueux de pain de singe (baobab).,OUI,
+Boissons,Jus de Gingembre,800,"Gnamakoudji maison, frais et piquant.",OUI,
+Boissons,Jus de Ditakh,1000,"Jus du fruit de ditakh, riche en vitamine C.",NON,
+Boissons,Café Touba,300,Café épicé au poivre de Guinée (djar).,OUI,
+Boissons,Boisson Gazeuse 33cl,700,"Canette au choix : Coca-Cola, Fanta, Sprite.",OUI,https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80
+Boissons,"Eau Minérale 1,5L",500,Bouteille d'eau fraîche.,OUI,
+</script>
+
+  <script>
+    // =====================================================================
+    //  RÉGLAGE À FAIRE UNE SEULE FOIS
+    //  Colle ici le lien CSV de ton Google Sheets publié
+    //  (Fichier > Partager > Publier sur le Web > Format CSV > Publier).
+    //  Ex : "https://docs.google.com/spreadsheets/d/e/XXXX/pub?output=csv"
+    // =====================================================================
+    const SHEET_CSV_URL = "";
+
+    // Catégorie affichée dans la section "Menu du Jour"
+    const DAILY_CATEGORY = "Cuisine sénégalaise";
+
+    const WHATSAPP_NUMBER = "221775500972";
+
+    // ---------------------------------------------------------------------
+    let catalog = [];
+    let cart = [];
+    let currentCat = 'all';
+
+    const norm = s => (s || '').toString().normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+    const esc = s => (s || '').toString().replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const fcfa = n => n.toLocaleString('fr-FR').replace(/ | /g, ' ');
+    const isYes = v => ['oui', 'o', 'x', 'yes', 'y', '1', 'vrai', 'true', 'ok'].includes(norm(v));
+    const isDaily = item => norm(item.cat) === norm(DAILY_CATEGORY);
+
+    // Lecteur CSV (gère les guillemets et les virgules dans les descriptions)
+    function parseCSV(text) {
+      const rows = []; let row = []; let field = ''; let q = false;
+      text = text.replace(/^﻿/, '');
+      for (let i = 0; i < text.length; i++) {
+        const c = text[i];
+        if (q) {
+          if (c === '"') { if (text[i + 1] === '"') { field += '"'; i++; } else q = false; }
+          else field += c;
+        } else if (c === '"') q = true;
+        else if (c === ',') { row.push(field); field = ''; }
+        else if (c === '\n' || c === '\r') {
+          if (c === '\r' && text[i + 1] === '\n') i++;
+          row.push(field); rows.push(row); row = []; field = '';
+        } else field += c;
+      }
+      if (field !== '' || row.length) { row.push(field); rows.push(row); }
+      return rows;
+    }
+
+    function rowsToCatalog(rows) {
+      return rows.slice(1)
+        .filter(r => r[1] && r[1].trim())
+        .map((r, i) => ({
+          id: i + 1,
+          cat: (r[0] || 'Autres').trim(),
+          name: r[1].trim(),
+          price: parseInt((r[2] || '').replace(/[^\d]/g, ''), 10) || 0,
+          desc: (r[3] || '').trim(),
+          available: isYes(r[4]),
+          img: (r[5] || '').trim()
+        }))
+        .filter(p => p.available);
+    }
+
+    async function loadMenu() {
+      if (SHEET_CSV_URL) {
+        try {
+          const url = SHEET_CSV_URL + (SHEET_CSV_URL.includes('?') ? '&' : '?') + 't=' + Date.now();
+          const res = await fetch(url, { cache: 'no-store' });
+          if (!res.ok) throw new Error(res.status);
+          const items = rowsToCatalog(parseCSV(await res.text()));
+          if (items.length) return items;
+        } catch (e) {
+          console.warn('Google Sheets indisponible, menu de secours utilisé.', e);
+        }
+      }
+      return rowsToCatalog(parseCSV(document.getElementById('default-menu').textContent.trim()));
+    }
+
+    function iconFor(cat) {
+      const c = norm(cat);
+      if (c.includes('senegal')) return 'fa-bowl-rice';
+      if (c.includes('fast')) return 'fa-burger';
+      if (c.includes('snack') || c.includes('fataya')) return 'fa-pepper-hot';
+      if (c.includes('dessert')) return 'fa-ice-cream';
+      if (c.includes('boisson')) return 'fa-glass-water';
+      return 'fa-utensils';
+    }
+
+    function cardHTML(p, highlight) {
+      const visual = p.img
+        ? `<img src="${esc(p.img)}" alt="${esc(p.name)}" class="w-full h-full object-cover" loading="lazy">`
+        : `<div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1a3159] via-[#11223F] to-[#3a2c0b]">
+             <i class="fa-solid ${iconFor(p.cat)} text-5xl text-[#D4AF37]/70"></i>
+           </div>`;
+      return `
+        <div class="bg-[#11223F]/80 border ${highlight ? 'border-[#D4AF37]/40' : 'border-white/10'} rounded-2xl overflow-hidden hover:border-[#D4AF37]/70 transition duration-300 flex flex-col">
+          <div class="h-40 overflow-hidden relative">
+            ${visual}
+            <span class="absolute top-3 right-3 bg-black/75 px-2.5 py-1 rounded-full text-xs font-bold text-[#D4AF37]">${fcfa(p.price)} FCFA</span>
+            ${highlight ? '<span class="absolute top-3 left-3 bg-[#E63946] px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide text-white">Du jour</span>' : ''}
+          </div>
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif font-bold text-white text-sm mb-1">${esc(p.name)}</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">${esc(p.desc)}</p>
+            </div>
+            <button onclick="addToCart(${p.id})" class="mt-4 w-full bg-white/5 hover:bg-[#D4AF37] text-white hover:text-black border border-white/15 hover:border-[#D4AF37] font-semibold text-xs py-2 rounded-xl transition flex items-center justify-center space-x-1.5">
+              <i class="fa-solid fa-plus text-[10px]"></i><span>Ajouter au panier</span>
+            </button>
+          </div>
+        </div>`;
+    }
+
+    function renderDaily() {
+      const grid = document.getElementById('daily-grid');
+      const daily = catalog.filter(isDaily);
+      grid.innerHTML = daily.length
+        ? daily.map(p => cardHTML(p, true)).join('')
+        : `<div class="col-span-full text-center text-slate-400 text-sm py-8">
+             Le menu du jour arrive bientôt. Appelez-nous au <a href="tel:775500972" class="text-[#D4AF37] font-bold">77 550 09 72</a>.
+           </div>`;
+    }
+
+    function renderTabs() {
+      const cats = [...new Set(catalog.map(p => p.cat))];
+      const tabs = [['all', 'Tout'], ...cats.map(c => [c, c])];
+      document.getElementById('menu-tabs').innerHTML = tabs.map(([key, label]) => {
+        const active = key === currentCat;
+        return `<button data-cat="${esc(key)}" class="menu-tab px-4 py-1.5 rounded-full text-xs font-semibold transition ${active ? 'bg-[#D4AF37] text-black' : 'bg-white/10 hover:bg-white/20 text-white'}">${esc(label)}</button>`;
+      }).join('');
+      document.querySelectorAll('.menu-tab').forEach(b => b.addEventListener('click', () => filterMenu(b.dataset.cat)));
+    }
+
+    function renderProducts() {
+      const list = currentCat === 'all' ? catalog : catalog.filter(p => p.cat === currentCat);
+      document.getElementById('product-grid').innerHTML = list.map(p => cardHTML(p, isDaily(p))).join('');
+    }
+
+    function filterMenu(cat) {
+      currentCat = cat;
+      renderTabs();
+      renderProducts();
+    }
+
+    // ----------------------------- PANIER -----------------------------
+    function addToCart(id) {
+      const prod = catalog.find(i => i.id === id);
+      if (!prod) return;
+      const found = cart.find(i => i.id === id);
+      if (found) found.qty += 1; else cart.push({ ...prod, qty: 1 });
+      refreshCartUI();
+      openCart();
+    }
+
+    function changeQty(id, step) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += step;
+      if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+      refreshCartUI();
+    }
+
+    function refreshCartUI() {
+      const list = document.getElementById('cart-items');
+      document.getElementById('cart-badge').textContent = cart.reduce((s, i) => s + i.qty, 0);
+      const totalLabel = document.getElementById('cart-total');
+
+      if (!cart.length) {
+        list.innerHTML = `<div class="text-center py-12 text-slate-400"><i class="fa-solid fa-basket-shopping text-3xl mb-2 opacity-30"></i><p class="text-xs">Votre panier est vide.</p></div>`;
+        totalLabel.textContent = '0 FCFA';
+        return;
+      }
+      let total = 0;
+      list.innerHTML = cart.map(item => {
+        total += item.price * item.qty;
+        return `
+          <div class="flex items-center justify-between bg-white/5 p-2.5 rounded-xl border border-white/5">
+            <div class="flex-1 mr-2">
+              <div class="text-xs font-bold text-white">${esc(item.name)}</div>
+              <div class="text-[11px] text-[#D4AF37] font-semibold">${fcfa(item.price)} FCFA</div>
+            </div>
+            <div class="flex items-center space-x-1.5">
+              <button onclick="changeQty(${item.id}, -1)" class="w-5 h-5 rounded bg-white/10 text-white flex items-center justify-center text-xs">-</button>
+              <span class="text-xs font-bold w-4 text-center text-white">${item.qty}</span>
+              <button onclick="changeQty(${item.id}, 1)" class="w-5 h-5 rounded bg-white/10 text-white flex items-center justify-center text-xs">+</button>
+            </div>
+          </div>`;
+      }).join('');
+      totalLabel.textContent = `${fcfa(total)} FCFA`;
+    }
+
+    function toggleCart() { document.getElementById('cart-drawer').classList.toggle('translate-x-full'); }
+    function openCart() { document.getElementById('cart-drawer').classList.remove('translate-x-full'); }
+
+    function sendOrderToWhatsApp() {
+      if (!cart.length) { alert("Veuillez sélectionner au moins un plat avant de commander."); return; }
+      const client = document.getElementById('cust-name').value.trim() || 'Client Les Lamane';
+      const address = document.getElementById('cust-dest').value.trim() || 'À Thiès (précisé par message)';
+
+      let msg = `*COMMANDE - RESTAURANT LES LAMANE*\n--------------------------------\n`;
+      msg += `👤 *Client :* ${client}\n📍 *Lieu / Quartier :* ${address}\n\n*PLATS CHOISIS :*\n`;
+      let total = 0;
+      cart.forEach(item => {
+        const sub = item.price * item.qty;
+        total += sub;
+        msg += `• ${item.qty}x ${item.name} = ${fcfa(sub)} FCFA\n`;
+      });
+      msg += `--------------------------------\n💰 *TOTAL À RÉGLER :* ${fcfa(total)} FCFA\n\n`;
+      msg += `Pouvez-vous me confirmer la préparation et le délai svp ?`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // ----------------------------- DÉMARRAGE -----------------------------
+    window.addEventListener('DOMContentLoaded', async () => {
+      document.getElementById('today-date').textContent =
+        new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+      refreshCartUI();
+      catalog = await loadMenu();
+      const prices = catalog
+        .filter(p => !['boisson', 'dessert'].some(k => norm(p.cat).includes(k)))
+        .map(p => p.price).filter(n => n > 0);
+      if (prices.length) document.getElementById('min-price').textContent = fcfa(Math.min(...prices));
+      renderDaily();
+      renderTabs();
+      renderProducts();
+    });
+  </script>
+</body>
+</html>
